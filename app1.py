@@ -24,9 +24,8 @@ if st.button("Predict Fraud"):
         "balance_dest": balance_dest,
         "type": type_choice
     }])
-
-    log_pred = log_model.predict(input_data)[0]
     xgb_pred = xgb_model.predict(input_data)[0]
 
     st.write(f"**Logistic Regression:** {'Fraud' if log_pred==1 else 'Not Fraud'}")
+
     st.write(f"**XGBoost:** {'Fraud' if xgb_pred==1 else 'Not Fraud'}")
